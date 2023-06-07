@@ -20,12 +20,6 @@ public class employeeController {
         return employeeService.addEmployee(employee);
     }
 
-    // Add more than 1 employee
-    @PostMapping("/addEmployees")
-    public List<employee> addAllEmployees(@RequestBody List<employee> employees) {
-        return employeeService.addAllEmployees(employees);
-    }
-
     // Get employee by Id
     @GetMapping("/getEmployeeByID/{id}")
     public employee getEmployeeById(@PathVariable int id) {
