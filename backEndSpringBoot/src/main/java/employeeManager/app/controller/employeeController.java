@@ -14,37 +14,37 @@ public class employeeController {
     @Autowired
     private employeeManager.app.services.employeeService employeeService;
 
-    // Add new employee
+    // Adaugare angajat
     @PostMapping("/addEmployee")
     public employee addEmployee(@RequestBody employee employee) {
         return employeeService.addEmployee(employee);
     }
 
-    // Get employee by Id
+    // Preluare angajat dupa ID angajat
     @GetMapping("/getEmployeeByID/{id}")
     public employee getEmployeeById(@PathVariable int id) {
         return employeeService.getEmployeeByID(id);
     }
 
-    // Get employee by name
+    // Preluare angajat dupa nume 
     @GetMapping("/getEmployeeByName/{name}")
     public employee getEmployeeByName(@PathVariable String name) {
         return  employeeService.getEmployeeByName(name);
     }
 
-    // Update employee
+    // Modificare angajat
     @PutMapping("/updateEmployee")
     public employee updateEmployee(@RequestBody employee employee) {
         return employeeService.updateEmployee(employee);
     }
 
-    // Delete employee
+    // Stergere angajat
     @DeleteMapping("/deleteEmployeeById/{id}")
     public boolean deleteEmployeeByID(@PathVariable int id) {
         return employeeService.deleteEmployeeByID(id);
     }
 
-    // Get all employees
+    // Preluare lista angajati
     @GetMapping("/getAll")
     public List<employee> getAllEmployee() {
         return employeeService.getAllEmployees();
