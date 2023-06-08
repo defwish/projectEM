@@ -14,9 +14,8 @@ public class Employee {
     private String email;
     private String position;
 
-    // Constructors, getters, and setters
     public Employee() {
-        // Default constructor
+        
     }
 
     public Employee(String name, String email, String position) {
