@@ -34,7 +34,7 @@ public class EmployeeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable long id, @RequestBody Employee updatedEmployee) {
+    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee updatedEmployee) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
         if (employeeOptional.isPresent()) {
             Employee employee = employeeOptional.get();
@@ -49,7 +49,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEmployee(@PathVariable long id) {
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
         if (employeeOptional.isPresent()) {
             employeeRepository.deleteById(id);
